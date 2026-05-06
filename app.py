@@ -80,13 +80,11 @@ with col2:
     fig, ax = plt.subplots(figsize=(8, 5))
     sns.set_style("whitegrid")
 
-    colors = plt.cm.viridis(feat_data['Importance'] / feat_data['Importance'].max())
-
     sns_plot = sns.barplot(
         data=feat_data, 
         x='Feature', 
         y='Importance', 
-        colors=colors, 
+        color="1f77b4", 
         ax=ax
     )
 
