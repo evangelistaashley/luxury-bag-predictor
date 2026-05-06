@@ -81,11 +81,11 @@ with col2:
     fig, ax = plt.subplots(figsize=(8, 5))
     
     # Add a clean background grid manually
-    ax.grid(axis='y', linestyle='--', alpha=0.7, zorder=0)
+    #ax.grid(axis='y', linestyle='--', alpha=0.7, zorder=0)
 
     # 3. Create Vertical Bar Chart using Pure Matplotlib
     # zorder=3 puts the bars in front of the grid lines
-    bars = ax.bar(
+    bars = ax.barh(
         feat_data['Feature'], 
         feat_data['Importance'], 
         color="#e6c8b7", 
@@ -101,7 +101,7 @@ with col2:
     for bar in bars:
         height = bar.get_height()
         if height > 0:
-            ax.annotate(format(height, '.3f'),
+            ax.annotate(format(height, '.2f'),
                         (bar.get_x() + bar.get_width() / 2., height),
                         ha='center', va='center',
                         xytext=(0, 9),
