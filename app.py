@@ -88,7 +88,7 @@ with col2:
     bars = ax.bar(
         feat_data['Feature'], 
         feat_data['Importance'], 
-        color="#1f77b4", 
+        color="#e6c8b7", 
         zorder=3
     )
 
@@ -106,7 +106,7 @@ with col2:
                         ha='center', va='center',
                         xytext=(0, 9),
                         textcoords='offset points',
-                        fontsize=10)
+                        fontsize=8)
         
     # Clean up the top and right borders
     ax.spines['top'].set_visible(False)
