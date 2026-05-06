@@ -85,7 +85,7 @@ with col2:
 
     # 3. Create Vertical Bar Chart using Pure Matplotlib
     # zorder=3 puts the bars in front of the grid lines
-    bars = ax.barh(
+    bars = ax.bar(
         feat_data['Feature'], 
         feat_data['Importance'], 
         color="#e6c8b7", 
