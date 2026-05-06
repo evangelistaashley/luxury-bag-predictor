@@ -78,7 +78,7 @@ with col2:
     }).sort_values(by='Importance', ascending=True)
 
     # 2. Create the Figure & Axis natively
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(6, 3))
     
     # Add a clean background grid manually
     #ax.grid(axis='y', linestyle='--', alpha=0.7, zorder=0)
