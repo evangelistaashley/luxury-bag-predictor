@@ -77,32 +77,46 @@ with col2:
         'Importance': model.feature_importances_
     }).sort_values(by='Importance', ascending=True)
 
+    # 2. Create the Figure & Axis natively
     fig, ax = plt.subplots(figsize=(8, 5))
-    sns.set_style("whitegrid")
+    
+    # Add a clean background grid manually
+    ax.grid(axis='y', linestyle='--', alpha=0.7, zorder=0)
 
-    sns_plot = sns.barplot(
-        data=feat_data, 
-        x='Feature', 
-        y='Importance', 
-        color="1f77b4", 
-        ax=ax
+    # 3. Create Vertical Bar Chart using Pure Matplotlib
+    # zorder=3 puts the bars in front of the grid lines
+    bars = ax.bar(
+        feat_data['Feature'], 
+        feat_data['Importance'], 
+        color="#1f77b4", 
+        zorder=3
     )
 
-    ax.set_ylabel("Importance Score") 
-    ax.set_xlabel("Bag Features")      
+    # 4. Set Labels and Limits (Requirements 2 & 3)
+    ax.set_ylabel("Importance Score", fontsize=11) 
+    ax.set_xlabel("Bag Features", fontsize=11)      
     ax.set_ylim(0, 1)                  
-    
-    for p in ax.patches:
-        ax.annotate(format(p.get_height(), '.3f'), 
-                    (p.get_x() + p.get_width() / 2., p.get_height()), 
-                    ha = 'center', va = 'center', 
-                    xytext = (0, 9), 
-                    textcoords = 'offset points',
-                    fontsize=10)
-    
-    sns.despine()
+
+    # 5. Add Data Labels (Requirement 5)
+    for bar in bars:
+        height = bar.get_height()
+        if height > 0:
+            ax.annotate(format(height, '.3f'),
+                        (bar.get_x() + bar.get_width() / 2., height),
+                        ha='center', va='center',
+                        xytext=(0, 9),
+                        textcoords='offset points',
+                        fontsize=10)
+        
+    # Clean up the top and right borders
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['left'].set_color('#cccccc')
+    ax.spines['bottom'].set_color('#cccccc')
+
+    # 6. Display in Streamlit
     st.pyplot(fig)
-    st.divider()
+
     
     # ROW 2: Top Performers
     st.subheader("⭐ Market-Wide Top Performers")
