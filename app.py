@@ -20,15 +20,9 @@ def load_assets():
         'Birkin', 
         'Kelly', 
         'Constance', 
-        'Speedy',
-        'Keepall',
-        'Garden',
-        'Herbag',
-        'Wallet',
-        'Alma'
+        'Speedy'
     ],
-    'predicted_cagr': [80.000000, 1.263145, 0.453377, -0.173121, -0.193158, 
-                        -0.301972, -0.390606, -0.411376, -0.582067, -0.62863 ] 
+    'predicted_cagr': [80.000000, 1.263145, 0.453377, -0.173121, -0.193158] 
     }
     top_bags = pd.DataFrame(top_bags_data)
 
@@ -172,7 +166,7 @@ with col2:
 
     ax.set_ylabel("Predicted CAGR", fontsize=10, color='white', fontweight='bold') 
     ax.set_xlabel("Model", fontsize=10, color='white', fontweight='bold')      
-    ax.set_ylim(-85, 85)    
+    ax.set_ylim(-25, 100)    
 
     ax.axhline(0, color='white', linewidth=0.8, alpha=0.5)
 
