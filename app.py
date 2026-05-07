@@ -176,11 +176,11 @@ with col2:
 
     # 5. Add data labels
     for bar in bars:
-            heigth = bar.get_heigth()
-            if heigth > 0:
+            height = bar.get_height()
+            if height > 0:
                 # Place the label inside the bar slightly
-                ax.annotate(format(heigth, '.2f'),
-                            (heigth + 0.015, bar.get_x() + bar.get_width() / 2.),
+                ax.annotate(format(height, '.2f'),
+                            (height + 0.015, bar.get_x() + bar.get_width() / 2.),
                             ha='left', va='center',
                             xytext=(0, 0),
                             textcoords='offset points',
