@@ -156,7 +156,7 @@ with col2:
     bars = ax.bar(
         top_bags['model_name'], 
         top_bags['predicted_cagr'], 
-        color="#f9edf0",
+        color="#e6c8b7",
         align='center'
     )
 
