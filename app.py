@@ -84,8 +84,8 @@ with col2:
 
     # 3. Create Vertical Bar Chart 
     bars = ax.barh(
-        feat_data['Feature'], 
         feat_data['Importance'], 
+        feat_data['Feature'], 
         color="#1f77b4"
     )
 
