@@ -174,24 +174,35 @@ with col2:
     ax.set_xlabel("Model", fontsize=10, color='white', fontweight='bold')      
     ax.set_ylim(-85, 85)    
 
-    # 5. Add data labels
-    for bar in bars:
-            height = bar.get_height()
-            if height > 0:
-                # Place the label inside the bar slightly
-                ax.annotate(format(height, '.2f'),
-                    (bar.get_x() + bar.get_width() / 2., height),
-                    ha='center', va='bottom',
-                    xytext=(0, 5), # 5 points vertical offset padding above the bar
-                    textcoords='offset points',
-                    fontsize=11,
-                    color='white',
-                    fontweight='bold')
-        
-    # Clean up the top and right borders
-    for spine in ax.spines.values():
-            spine.set_visible(False)
-    ax.grid(False)
+    ax.axhline(0, color='white', linewidth=0.8, alpha=0.5)
 
-    # 6. Display in Streamlit
-    st.pyplot(fig, clear_figure=True)
+    # 5. Add data labels
+     for bar in bars:
+            height = bar.get_height()
+            
+            if height >= 0:
+                # Positive performers: Put label ABOVE the bar
+                va_direction = 'bottom'
+                offset = 5
+            else:
+                # Negative performers: Put label BELOW the bar
+                va_direction = 'top'
+                offset = -5
+    
+            ax.annotate(format(height, '.2f'),
+                        (bar.get_x() + bar.get_width() / 2., height),
+                        ha='center', 
+                        va=va_direction,      # Dynamic anchor direction
+                        xytext=(0, offset),   # Dynamic pixel offset shift
+                        textcoords='offset points',
+                        fontsize=10,
+                        color='white',
+                        fontweight='bold')
+            
+        # Clean up the top and right borders
+        for spine in ax.spines.values():
+            spine.set_visible(False)
+        ax.grid(False)
+    
+        # 6. Display in Streamlit
+        st.pyplot(fig, clear_figure=True)
