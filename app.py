@@ -72,7 +72,7 @@ with col2:
     # ROW 1: Feature Importance Chart
     st.subheader("💎 Key Value Drivers")
     st.markdown(
-        "Model has the highest impact on asset appreciation. "
+        "Model has the highest impact on value appreciation, followed by brand and condition. "
     )
     
     feature_names = ['Brand / Designer', 'Condition', 'Primary Color', 'Market Status', 'Model']
