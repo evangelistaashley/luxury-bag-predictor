@@ -97,7 +97,7 @@ with col2:
     # 5. Add Data Labels (Requirement 5)
     for bar in bars:
             heigth = bar.get_heigth()
-            if width > 0:
+            if heigth > 0:
                 # Place the label inside the bar slightly
                 ax.annotate(format(width, '.2f'),
                             (height - 0.015, bar.get_y() + bar.get_height() / 2.),
