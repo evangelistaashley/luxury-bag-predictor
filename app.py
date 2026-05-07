@@ -72,10 +72,10 @@ with col2:
     # ROW 1: Feature Importance Chart
     st.subheader("💎 Key Value Drivers")
     st.markdown(
-        f"##### **Market Insight:** The bag model has the highest impact on asset appreciation. "
+        "Model has the highest impact on asset appreciation. "
     )
     
-    feature_names = ['Brand', 'Condition', 'Color', 'Market Status', 'Model']
+    feature_names = ['Brand / Designer', 'Condition', 'Primary Color', 'Market Status', 'Model']
     feat_data = pd.DataFrame({
         'Feature': feature_names,
         'Importance': model.feature_importances_
