@@ -111,8 +111,8 @@ with col2:
     ax.tick_params(axis='x', colors='white', labelsize=8)
     ax.tick_params(axis='y', colors='white', labelsize=8)
 
-    ax.set_ylabel("Bag Features", fontsize=12, color='white', fontweight='bold') 
-    ax.set_xlabel("Importance Scores", fontsize=12, color='white', fontweight='bold')      
+    ax.set_ylabel("Bag Features", fontsize=10, color='white', fontweight='bold') 
+    ax.set_xlabel("Importance Scores", fontsize=10, color='white', fontweight='bold')      
     ax.set_xlim(0, 1)    
 
     # 5. Add Data Labels (Requirement 5)
@@ -164,9 +164,9 @@ with col2:
     ax.tick_params(axis='x', colors='white', labelsize=8)
     ax.tick_params(axis='y', colors='white', labelsize=8)
 
-    ax.set_ylabel("Predicted CAGR", fontsize=12, color='white', fontweight='bold') 
-    ax.set_xlabel("Model", fontsize=12, color='white', fontweight='bold')      
-    ax.set_ylim(-25, 100)    
+    ax.set_ylabel("Predicted CAGR", fontsize=10, color='white', fontweight='bold') 
+    ax.set_xlabel("Model", fontsize=10, color='white', fontweight='bold')      
+    ax.set_ylim(-20, 100)    
 
     ax.axhline(0, color='white', linewidth=0.8, alpha=0.5)
 
