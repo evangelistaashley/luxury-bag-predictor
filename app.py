@@ -95,7 +95,7 @@ with col2:
     }).sort_values(by='Importance', ascending=True)
 
     # 2. Create the Figure & Axis natively & make background transparent
-    fig, ax = plt.subplots(figsize=(7, 3))
+    fig, ax = plt.subplots(figsize=(6, 2))
     fig.patch.set_alpha(0.0)
     ax.patch.set_alpha(0.0)
 
@@ -148,7 +148,7 @@ with col2:
     )
 
     # 2. Create the Figure & Axis natively & make background transparent
-    fig, ax = plt.subplots(figsize=(7, 3))
+    fig, ax = plt.subplots(figsize=(6, 2))
     fig.patch.set_alpha(0.0)
     ax.patch.set_alpha(0.0)
 
