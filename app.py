@@ -72,7 +72,7 @@ with col2:
     # ROW 1: Feature Importance Chart
     st.subheader("💎 Key Value Drivers")
     st.markdown(
-        f"##### **Market Insight:** *{feat_data.iloc[-1]['Features']}* has the highest impact on asset appreciation. "
+        f"##### **Market Insight:** *{feat_data.iloc[-1]['Feature']}* has the highest impact on asset appreciation. "
     )
     
     feature_names = ['Brand', 'Condition', 'Color', 'Market Status', 'Model']
