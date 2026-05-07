@@ -71,6 +71,10 @@ with col1:
 with col2:
     # ROW 1: Feature Importance Chart
     st.subheader("💎 Key Value Drivers")
+    st.markdown(
+        f"##### *{feat_data.iloc[-1]['Bag Features']}* has the highest impact on bag value appreciation."
+    )
+    
     feature_names = ['Brand', 'Condition', 'Color', 'Market Status', 'Model']
     feat_data = pd.DataFrame({
         'Feature': feature_names,
@@ -94,8 +98,8 @@ with col2:
     ax.tick_params(axis='x', colors='white', labelsize=10)
     ax.tick_params(axis='y', colors='white', labelsize=10)
 
-    ax.set_ylabel("**Bag Features**", fontsize=12, color='white', fontweight='bold') 
-    ax.set_xlabel("**Importance Scores**", fontsize=12, color='white', fontweight='bold')      
+    ax.set_ylabel("Bag Features", fontsize=12, color='white', fontweight='bold') 
+    ax.set_xlabel("Importance Scores", fontsize=12, color='white', fontweight='bold')      
     ax.set_xlim(0, 1)    
 
     # 5. Add Data Labels (Requirement 5)
