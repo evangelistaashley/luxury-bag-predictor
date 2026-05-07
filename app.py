@@ -180,13 +180,13 @@ with col2:
             if height > 0:
                 # Place the label inside the bar slightly
                 ax.annotate(format(height, '.2f'),
-                            (height + 0.015, bar.get_x() + bar.get_width() / 2.),
-                            ha='left', va='center',
-                            xytext=(0, 0),
-                            textcoords='offset points',
-                            fontsize=10,
-                            color='white',
-                            fontweight='bold')
+                    (bar.get_x() + bar.get_width() / 2., height),
+                    ha='center', va='bottom',
+                    xytext=(0, 5), # 5 points vertical offset padding above the bar
+                    textcoords='offset points',
+                    fontsize=11,
+                    color='white',
+                    fontweight='bold')
         
     # Clean up the top and right borders
     for spine in ax.spines.values():
