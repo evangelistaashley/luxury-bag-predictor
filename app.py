@@ -32,7 +32,7 @@ with col1:
     brand = st.selectbox("Brand / Designer", sorted(list(brand_model_map.keys())))
 
     available_models = sorted(brand_model_map[brand])
-    model_name = st.selectbox("Model Silhouette", available_models)
+    model_name = st.selectbox("Model", available_models)
 
     color = st.selectbox("Primary Color", encoders['color'].classes_)
 
@@ -86,13 +86,14 @@ with col2:
     bars = ax.barh(
         feat_data['Feature'], 
         feat_data['Importance'], 
-        color="#ba6a36"
+        color="#ba6a36",
+        align='center'
     )
 
     # 4. Set Labels and Axis range
-    ax.set_ylabel("**Importance Score**", fontsize=12, color='white', fontweight='bold') 
-    ax.set_xlabel("**Bag Features**", fontsize=12, color='white', fontweight='bold')      
-    ax.set_ylim(0, 1)                  
+    ax.set_ylabel("**Bag Features**", fontsize=12, color='white', fontweight='bold') 
+    ax.set_xlabel("**Importance Scores**", fontsize=12, color='white', fontweight='bold')      
+    ax.set_xlim(0, 1)                  
 
     # 5. Add Data Labels (Requirement 5)
     for bar in bars:
