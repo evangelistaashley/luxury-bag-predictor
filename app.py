@@ -43,7 +43,7 @@ with col1:
 
     wishlist_val = hype_map[hype_status]
 
-#Column 1: Valuation Engine Model
+#Valuation Engine Model
     input_df = pd.DataFrame({
         'vendor': [encoders['vendor'].transform([brand])[0]],
         'condition': [condition_map[condition_label]],
@@ -69,7 +69,7 @@ with col1:
     st.caption(f"Analysis based on a {brand} {model_name} in {condition_label} condition.")
 
 with col2:
-    # ROW 1: Feature Importance
+    # ROW 1: Feature Importance Chart
     st.subheader("💎 Key Value Drivers")
     feature_names = ['Brand', 'Condition', 'Color', 'Market Status', 'Model']
     feat_data = pd.DataFrame({
@@ -77,47 +77,48 @@ with col2:
         'Importance': model.feature_importances_
     }).sort_values(by='Importance', ascending=True)
 
-    # 2. Create the Figure & Axis natively
-    fig, ax = plt.subplots(figsize=(6, 3))
-    
-    # Add a clean background grid manually
-    #ax.grid(axis='y', linestyle='--', alpha=0.7, zorder=0)
+    # 2. Create the Figure & Axis natively & make background transparent
+    fig, ax = plt.subplots(figsize=(8, 5))
+    fig.patch.set_alpha(0.0)
+    ax.patch.set_alpha(0.0)
 
-    # 3. Create Vertical Bar Chart using Pure Matplotlib
-    # zorder=3 puts the bars in front of the grid lines
-    bars = ax.bar(
+    # 3. Create Vertical Bar Chart 
+    bars = ax.barh(
         feat_data['Feature'], 
         feat_data['Importance'], 
-        color="#e6c8b7", 
-        zorder=3
+        color="#c3955b"
     )
 
-    # 4. Set Labels and Limits (Requirements 2 & 3)
-    ax.set_ylabel("Importance Score", fontsize=11) 
-    ax.set_xlabel("Bag Features", fontsize=11)      
+    # 4. Set Labels and Axis range
+    ax.set_ylabel("**Importance Score**", fontsize=12, color='white', fontweight='bold') 
+    ax.set_xlabel("**Bag Features**", fontsize=12, color='white', fontweight='bold')      
     ax.set_ylim(0, 1)                  
 
     # 5. Add Data Labels (Requirement 5)
     for bar in bars:
-        height = bar.get_height()
-        if height > 0:
-            ax.annotate(format(height, '.2f'),
-                        (bar.get_x() + bar.get_width() / 2., height),
-                        ha='center', va='center',
-                        xytext=(0, 9),
-                        textcoords='offset points',
-                        fontsize=8)
+            width = bar.get_width()
+            if width > 0:
+                # Place the label inside the bar slightly
+                ax.annotate(format(width, '.2f'),
+                            (width - 0.015, bar.get_y() + bar.get_width() / 2.),
+                            ha='right', va='center',
+                            xytext=(0, 0),
+                            textcoords='offset points',
+                            fontsize=10,
+                            color='white',
+                            fontweight='bold')
         
     # Clean up the top and right borders
-    ax.spines['top'].set_visible(False)
-    ax.spines['right'].set_visible(False)
-    ax.spines['left'].set_color('#cccccc')
-    ax.spines['bottom'].set_color('#cccccc')
+    for spine in ax.spines.values():
+            spine.set_visible(False)
+    
+    # REMOVE GRID LINES (Requirement)
+    ax.grid(False)
 
     # 6. Display in Streamlit
-    st.pyplot(fig)
+    st.pyplot(fig, clear_figure=True)
 
-    
+
     # ROW 2: Top Performers
     st.subheader("⭐ Market-Wide Top Performers")
     top_10 = top_bags.sort_values(by='predicted_cagr', ascending=False).head(10)
