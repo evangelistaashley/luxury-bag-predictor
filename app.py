@@ -84,9 +84,9 @@ with col2:
 
     # 3. Create Vertical Bar Chart 
     bars = ax.barh(
-        feat_data['Importance'], 
         feat_data['Feature'], 
-        color="#1f77b4"
+        feat_data['Importance'], 
+        color="#ba6a36"
     )
 
     # 4. Set Labels and Axis range
@@ -96,11 +96,11 @@ with col2:
 
     # 5. Add Data Labels (Requirement 5)
     for bar in bars:
-            heigth = bar.get_heigth()
-            if heigth > 0:
+            width = bar.get_width()
+            if width > 0:
                 # Place the label inside the bar slightly
                 ax.annotate(format(width, '.2f'),
-                            (height - 0.015, bar.get_y() + bar.get_height() / 2.),
+                            (width - 0.015, bar.get_y() + bar.get_width() / 2.),
                             ha='right', va='center',
                             xytext=(0, 0),
                             textcoords='offset points',
