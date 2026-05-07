@@ -108,8 +108,8 @@ with col2:
     )
 
     # 4. Update tick park color, set Labels, and axis range
-    ax.tick_params(axis='x', colors='white', labelsize=10)
-    ax.tick_params(axis='y', colors='white', labelsize=10)
+    ax.tick_params(axis='x', colors='white', labelsize=8)
+    ax.tick_params(axis='y', colors='white', labelsize=8)
 
     ax.set_ylabel("Bag Features", fontsize=12, color='white', fontweight='bold') 
     ax.set_xlabel("Importance Scores", fontsize=12, color='white', fontweight='bold')      
@@ -125,7 +125,7 @@ with col2:
                             ha='left', va='center',
                             xytext=(0, 0),
                             textcoords='offset points',
-                            fontsize=10,
+                            fontsize=8,
                             color='white',
                             fontweight='bold')
         
@@ -164,8 +164,8 @@ with col2:
     ax.tick_params(axis='x', colors='white', labelsize=8)
     ax.tick_params(axis='y', colors='white', labelsize=8)
 
-    ax.set_ylabel("Predicted CAGR", fontsize=10, color='white', fontweight='bold') 
-    ax.set_xlabel("Model", fontsize=10, color='white', fontweight='bold')      
+    ax.set_ylabel("Predicted CAGR", fontsize=12, color='white', fontweight='bold') 
+    ax.set_xlabel("Model", fontsize=12, color='white', fontweight='bold')      
     ax.set_ylim(-25, 100)    
 
     ax.axhline(0, color='white', linewidth=0.8, alpha=0.5)
@@ -187,7 +187,7 @@ with col2:
                     va=va_direction,      # Dynamic anchor direction
                     xytext=(0, offset),   # Dynamic pixel offset shift
                     textcoords='offset points',
-                    fontsize=10,
+                    fontsize=8,
                     color='white',
                     fontweight='bold')
             
