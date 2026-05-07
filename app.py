@@ -95,7 +95,7 @@ with col2:
     }).sort_values(by='Importance', ascending=True)
 
     # 2. Create the Figure & Axis natively & make background transparent
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(6, 4))
     fig.patch.set_alpha(0.0)
     ax.patch.set_alpha(0.0)
 
@@ -144,11 +144,11 @@ with col2:
     # ROW 2: Top Performers Chart
     st.subheader("🌟 Top 5 Performing Models")
     st.markdown(
-        "High performance by Chanel 25s are due to it being recently released (2025). Hermes bags, such as Birkin, Kelly, and Constance, have positive returns."
+        "High performance by Chanel 25s are due to it being recently released (2025). Hermes bags, such as Birkin, Kelly, and Constance, show positive growth over time."
     )
 
     # 2. Create the Figure & Axis natively & make background transparent
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(6, 4))
     fig.patch.set_alpha(0.0)
     ax.patch.set_alpha(0.0)
 
