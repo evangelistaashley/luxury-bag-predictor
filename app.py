@@ -90,10 +90,13 @@ with col2:
         align='center'
     )
 
-    # 4. Set Labels and Axis range
+    # 4. Update tick park color, set Labels, and axis range
+    ax.tick_params(axis='x', colors='white', labelsize=10)
+    ax.tick_params(axis='y', colors='white', labelsize=10)
+
     ax.set_ylabel("**Bag Features**", fontsize=12, color='white', fontweight='bold') 
     ax.set_xlabel("**Importance Scores**", fontsize=12, color='white', fontweight='bold')      
-    ax.set_xlim(0, 1)                  
+    ax.set_xlim(0, 1)    
 
     # 5. Add Data Labels (Requirement 5)
     for bar in bars:
