@@ -86,7 +86,7 @@ with col2:
     bars = ax.barh(
         feat_data['Feature'], 
         feat_data['Importance'], 
-        color="#c3955b"
+        color="#1f77b4"
     )
 
     # 4. Set Labels and Axis range
