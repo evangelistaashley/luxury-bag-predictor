@@ -142,9 +142,9 @@ with col2:
     st.divider()
 
     # ROW 2: Top Performers Chart
-    st.subheader("🌟 Top 10 Performing Models")
+    st.subheader("🌟 Top 5 Performing Models")
     st.markdown(
-        "xxx. "
+        "High performance by Chanel 25s are due to it being recently released (2025). Hermes bags, such as Birkin, Kelly, and Constance, have positive returns."
     )
 
     # 2. Create the Figure & Axis natively & make background transparent
