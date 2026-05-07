@@ -13,9 +13,28 @@ def load_assets():
     encoders = joblib.load('encoders_dict.pkl')
     condition_map = joblib.load('condition_map.pkl')
     brand_model_map = joblib.load('brand_model_map.pkl')
-    return model, encoders, condition_map, brand_model_map
 
-model, encoders, condition_map, brand_model_map = load_assets()
+        top_bags_data = {
+        'model_name': [
+            'Chanel 25', 
+            'Birkin', 
+            'Kelly', 
+            'Constance', 
+            'Speedy',
+            'Keepall',
+            'Garden',
+            'Herbag',
+            'Wallet',
+            'Alma'
+        ],
+        'predicted_cagr': [80.000000, 1.263145, 0.453377, -0.173121, -0.193158, 
+                           -0.301972, -0.390606, -0.411376, -0.582067, -0.62863 ] 
+    }
+    top_bags = pd.DataFrame(top_bags_data)
+
+    return model, encoders, condition_map, brand_model_map, top_bags
+
+model, encoders, condition_map, brand_model_map, top_bags = load_assets()
 
 st.title("👜 Luxury Bag Valuation & Market Intelligence")
 st.divider()
