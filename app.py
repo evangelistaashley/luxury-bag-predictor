@@ -75,7 +75,7 @@ with col2:
     feat_data = pd.DataFrame({
         'Feature': feature_names,
         'Importance': model.feature_importances_
-    }).sort_values(by='Importance', ascending=False)
+    }).sort_values(by='Importance', ascending=True)
 
     # 2. Create the Figure & Axis natively & make background transparent
     fig, ax = plt.subplots(figsize=(8, 5))
@@ -101,8 +101,8 @@ with col2:
             if width > 0:
                 # Place the label inside the bar slightly
                 ax.annotate(format(width, '.2f'),
-                            (width - 0.015, bar.get_y() + bar.get_width() / 2.),
-                            ha='right', va='center',
+                            (width + 0.015, bar.get_y() + bar.get_height() / 2.),
+                            ha='left', va='center',
                             xytext=(0, 0),
                             textcoords='offset points',
                             fontsize=10,
