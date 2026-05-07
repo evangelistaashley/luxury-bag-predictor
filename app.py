@@ -128,51 +128,51 @@ with col2:
 
     st.divider()
 
-  # ROW 2: Top Performers
-      st.subheader("💎 Top 10 Performing Models")
-          st.markdown(
-              "xxx. "
-          )
-    
-        # 2. Create the Figure & Axis natively & make background transparent
-        fig, ax = plt.subplots(figsize=(8, 5))
-        fig.patch.set_alpha(0.0)
-        ax.patch.set_alpha(0.0)
-    
-        # 3. Create Vertical Bar Chart 
-        bars = ax.bar(
-            top_bags['model_name'], 
-            top_bags['predicted_cagr'], 
-            color="#c3955b",
-            align='center'
-        )
-    
-        # 4. Update tick park color, set labels, and axis range
-        ax.tick_params(axis='x', colors='white', labelsize=8)
-        ax.tick_params(axis='y', colors='white', labelsize=8)
-    
-        ax.set_ylabel("Predicted CAGR", fontsize=10, color='white', fontweight='bold') 
-        ax.set_xlabel("Model", fontsize=10, color='white', fontweight='bold')      
-        ax.set_ylim(0, 100)    
-    
-        # 5. Add data labels
-        for bar in bars:
-                heigth = bar.get_heigth()
-                if heigth > 0:
-                    # Place the label inside the bar slightly
-                    ax.annotate(format(heigth, '.2f'),
-                                (heigth + 0.015, bar.get_x() + bar.get_width() / 2.),
-                                ha='left', va='center',
-                                xytext=(0, 0),
-                                textcoords='offset points',
-                                fontsize=10,
-                                color='white',
-                                fontweight='bold')
-            
-        # Clean up the top and right borders
-        for spine in ax.spines.values():
-                spine.set_visible(False)
-        ax.grid(False)
-    
-        # 6. Display in Streamlit
-        st.pyplot(fig, clear_figure=True)
+    # ROW 2: Top Performers Chart
+    st.subheader("🌟 Top 10 Performing Models")
+    st.markdown(
+        "xxx. "
+    )
+
+    # 2. Create the Figure & Axis natively & make background transparent
+    fig, ax = plt.subplots(figsize=(8, 5))
+    fig.patch.set_alpha(0.0)
+    ax.patch.set_alpha(0.0)
+
+    # 3. Create Vertical Bar Chart 
+    bars = ax.bar(
+        top_bags['model_name'], 
+        top_bags['predicted_cagr'], 
+        color="#c3955b",
+        align='center'
+    )
+
+    # 4. Update tick park color, set labels, and axis range
+    ax.tick_params(axis='x', colors='white', labelsize=8)
+    ax.tick_params(axis='y', colors='white', labelsize=8)
+
+    ax.set_ylabel("Predicted CAGR", fontsize=10, color='white', fontweight='bold') 
+    ax.set_xlabel("Model", fontsize=10, color='white', fontweight='bold')      
+    ax.set_ylim(0, 100)    
+
+    # 5. Add data labels
+    for bar in bars:
+            heigth = bar.get_heigth()
+            if heigth > 0:
+                # Place the label inside the bar slightly
+                ax.annotate(format(heigth, '.2f'),
+                            (heigth + 0.015, bar.get_x() + bar.get_width() / 2.),
+                            ha='left', va='center',
+                            xytext=(0, 0),
+                            textcoords='offset points',
+                            fontsize=10,
+                            color='white',
+                            fontweight='bold')
+        
+    # Clean up the top and right borders
+    for spine in ax.spines.values():
+            spine.set_visible(False)
+    ax.grid(False)
+
+    # 6. Display in Streamlit
+    st.pyplot(fig, clear_figure=True)
