@@ -96,11 +96,11 @@ with col2:
 
     # 5. Add Data Labels (Requirement 5)
     for bar in bars:
-            width = bar.get_width()
+            heigth = bar.get_heigth()
             if width > 0:
                 # Place the label inside the bar slightly
                 ax.annotate(format(width, '.2f'),
-                            (width - 0.015, bar.get_y() + bar.get_width() / 2.),
+                            (height - 0.015, bar.get_y() + bar.get_height() / 2.),
                             ha='right', va='center',
                             xytext=(0, 0),
                             textcoords='offset points',
