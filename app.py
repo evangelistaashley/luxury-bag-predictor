@@ -172,7 +172,7 @@ with col2:
 
     ax.set_ylabel("Predicted CAGR", fontsize=10, color='white', fontweight='bold') 
     ax.set_xlabel("Model", fontsize=10, color='white', fontweight='bold')      
-    ax.set_ylim(0, 100)    
+    ax.set_ylim(0, 85)    
 
     # 5. Add data labels
     for bar in bars:
