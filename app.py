@@ -75,7 +75,7 @@ with col2:
     feat_data = pd.DataFrame({
         'Feature': feature_names,
         'Importance': model.feature_importances_
-    }).sort_values(by='Importance', ascending=True)
+    }).sort_values(by='Importance', ascending=False)
 
     # 2. Create the Figure & Axis natively & make background transparent
     fig, ax = plt.subplots(figsize=(8, 5))
