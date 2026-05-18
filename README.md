@@ -80,4 +80,4 @@ luxury-bag-predictor/
 ├── encoders_dict.pkl           # Categorical Mapping Artifacts
 ├── condition_map.pkl           # Condition mapping
 ├── brand_model_map.pkl         # Brand to model mapping
-└── Handbag_Valuation.ipynb # Full Research, EDA & Training Audit Trail
+└── Handbag_Valuation.ipynb     # Full Research, EDA & Training Audit Trail
